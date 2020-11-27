@@ -6,11 +6,17 @@ import adao.developer.paginacao.entities.Res
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface Service{
 
-    @GET("characters?ts=1&apikey=6eb7e8896ec5850c52515a8a23ee97f0&hash=40a3aa568bb269dfad85ae0c4a297181")
-    suspend fun getDataFile(): Res
+    @GET("characters?")
+    suspend fun getDataFile(
+            @Query("ts") ts: String,
+            @Query("apikey") apikey: String,
+            @Query("hash") hash: String
+    ): Data2
 
 }
 

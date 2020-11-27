@@ -16,7 +16,11 @@ class MainViewModel(service: Service):ViewModel() {
     fun getData(){
         viewModelScope.launch {
             try{
-                Log.i("Retorono", service.getDataFile().toString())
+                Log.i("Retorono", service.getDataFile(
+                        "1",
+                        "6eb7e8896ec5850c52515a8a23ee97f0",
+                        "40a3aa568bb269dfad85ae0c4a297181"
+                ).toString())
             }catch (e: Exception){
                 Log.i("MainViewModel", e.toString())
             }
