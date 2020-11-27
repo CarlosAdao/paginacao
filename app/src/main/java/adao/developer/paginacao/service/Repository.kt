@@ -13,10 +13,12 @@ interface Service{
 
     @GET("characters?")
     suspend fun getDataFile(
+            @Query("limit") lim: Int,
+            @Query("offset") offset: Int,
             @Query("ts") ts: String,
             @Query("apikey") apikey: String,
             @Query("hash") hash: String
-    ): Data2
+    ): Res
 
 }
 
